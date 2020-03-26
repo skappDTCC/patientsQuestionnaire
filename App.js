@@ -13,6 +13,9 @@ import { CheckBox } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+//Manually Importing the font library for the program to load upon boot-up
+import * as Font from 'expo-font';
+
 // Other resopurces
 // https://react-native-elements.github.io/react-native-elements/docs/getting_started.html
 // Checkbox: https://react-native-elements.github.io/react-native-elements/docs/checkbox.html
@@ -23,20 +26,20 @@ class HomeScreen extends Component{
   render(){
   return (
     <View style={styles.container}>
-      <Image source={require('./assets/images/medLogo.png')} style={ styles.logo }/>
+      <Image source={require('./assets/Images/medLogo.png')} style={ styles.logo }/>
       <Text style={styles.welcomeText}>WELCOME!</Text>
       <Text style={styles.text}>This is the new patient questionnaire.</Text>
       <Text style={styles.text}>To start, you can fill up the form or you can view the Information summary.</Text>
       <View style={styles.startSurvey}>
         <Button
         title="Patient Form"
-        color='black'
+        color='blue'
         onPress={() => this.props.navigation.navigate('Patient Form')}
       /></View>
       <View style={styles.seeResults}>
         <Button
         title="View Summary"
-        color='black'
+        color='blue'
         fontSize='20'
         onPress={() => this.props.navigation.navigate('Summary')}
       /></View>
@@ -338,7 +341,7 @@ const styles = StyleSheet.create({
     paddingTop: 150,
     paddingBottom: 30,
     fontSize: 60,
-    fontFamily: 'Avenir-Medium',
+    fontFamily: 'Helvetica',
     color:'#323232'
   },
   text:{
